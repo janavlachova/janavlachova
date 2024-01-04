@@ -1,0 +1,13 @@
+{
+    "urls": {
+        "about": "/o-mne",
+        "projects": "/projekty",
+        "contact": "/kontakt"
+    },
+    "menu": {
+        "home": "Domů",
+        "about": "O mně",
+        "projects": "Projekty",
+        "contact": "Kontakt"
+    }
+}
