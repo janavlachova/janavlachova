@@ -1,14 +1,43 @@
 <script lang="ts" setup>
-const { locale } = useI18n();
+const {
+    t,
+    getLocalePath,
+    currentPagePath,
+    setDefaultLocaleCode,
+    localeExists,
+    currentLocale,
+    setLocaleCode,
+    initI18n,
+} = useI18n();
 const route = useRoute();
-const path =
-    `/${locale.value}/` +
-    (Array.isArray(route.params.slug)
-        ? route.params.slug.join("/")
-        : route.params.slug ?? "");
+
+initI18n();
+
+if (
+    !Array.isArray(route.params.slug) ||
+    !route.params.slug.length ||
+    !localeExists(route.params.slug[0])
+) {
+    setDefaultLocaleCode();
+    currentPagePath.value = `${currentLocale.value?.code ?? "en"}${route.path}`;
+} else {
+    setLocaleCode(route.params.slug[0]);
+    currentPagePath.value = `${route.path}`;
+}
 </script>
 
 <template>
+    <NuxtLink :to="getLocalePath('/')">{{ t("menu.home") }}</NuxtLink>
+    <NuxtLink :to="getLocalePath(t('url.about'))">
+        {{ t("menu.about") }}
+    </NuxtLink>
+    <NuxtLink :to="getLocalePath(t('url.projects'))">
+        {{ t("menu.projects") }}
+    </NuxtLink>
+    <NuxtLink :to="getLocalePath(t('url.contact'))">
+        {{ t("menu.contact") }}
+    </NuxtLink>
+
     <main>
         <img
             alt="jana vlachova logo"
@@ -18,6 +47,6 @@ const path =
             height="125"
         />
         jana vlachova
-        <ContentDoc :path="path" />
+        <ContentDoc :path="currentPagePath ?? '/'" />
     </main>
 </template>

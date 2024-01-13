@@ -1,19 +1,25 @@
 import { shallowMount } from "@vue/test-utils";
 import { describe, it, expect } from "vitest";
-import { createI18n } from "vue-i18n";
-import { useRouter } from "nuxt/app";
-import i18nConfig from "@/i18n.config";
 import slug from "@/pages/[...slug].vue";
 
 describe("[...slug]", () => {
-    it("renders the correct message", () => {
-        const i18n = createI18n(i18nConfig);
+    it("renders content", () => {
         const wrapper = shallowMount(slug, {
             route: "/about",
             global: {
-                plugins: [i18n, useRouter()],
+                plugins: [useRouter()],
             },
         });
-        expect(wrapper.text()).toContain("jana vlachova");
+        expect(wrapper.getComponent("content-doc-stub")).toBeTruthy();
+    });
+
+    it("renders content for a specific locale", () => {
+        const wrapper = shallowMount(slug, {
+            route: "/cs/about",
+            global: {
+                plugins: [useRouter()],
+            },
+        });
+        expect(wrapper.getComponent("content-doc-stub")).toBeTruthy();
     });
 });

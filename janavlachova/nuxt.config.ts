@@ -1,5 +1,5 @@
+import { resolve } from "node:path";
 import { fileURLToPath, URL } from "node:url";
-import i18nConfig from "./i18n.config";
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
@@ -8,9 +8,20 @@ export default defineNuxtConfig({
     },
     devtools: { enabled: true },
     modules: [
-        "@nuxt/content",
+        [
+            "@nuxt/content",
+            {
+                documentDriven: { injectPage: false },
+                sources: {
+                    en: {
+                        base: resolve(__dirname, "content/en"),
+                        driver: "fs",
+                        prefix: "/",
+                    },
+                },
+            },
+        ],
         "@nuxt/test-utils/module",
-        ["@nuxtjs/i18n", i18nConfig],
     ],
     vite: {
         resolve: {
