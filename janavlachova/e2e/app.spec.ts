@@ -4,5 +4,5 @@ import { test, expect } from "@playwright/test";
 // https://playwright.dev/docs/intro
 test("visits the app root url", async ({ page, baseURL }) => {
     await page.goto(baseURL + "/");
-    await expect(page.locator("main")).toContainText("jana vlachova");
+    await expect(page.locator("main")).toContainText("Jana Vlachova");
 });
