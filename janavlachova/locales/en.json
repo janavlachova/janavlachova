@@ -1,13 +1,22 @@
 {
     "url": {
+        "home": "/",
         "about": "/about",
         "projects": "/projects",
-        "contact": "/contact"
+        "contact": "/contact",
+        "terms-and-conditions": "/terms-and-conditions",
+        "privacy-policy": "/privacy-policy"
     },
     "menu": {
         "home": "Home",
         "about": "About",
         "projects": "Projects",
-        "contact": "Contact"
+        "contact": "Contact",
+        "terms-and-conditions": "Terms and Conditions",
+        "privacy-policy": "Privacy Policy"
+    },
+    "header": {
+        "title": "Jana Vlachova",
+        "subtitle": "Fullstack Web Developer"
     }
 }

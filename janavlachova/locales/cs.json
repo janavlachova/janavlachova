@@ -1,13 +1,22 @@
 {
     "url": {
+        "home": "/",
         "about": "/o-mne",
         "projects": "/projekty",
-        "contact": "/kontakt"
+        "contact": "/kontakt",
+        "terms-and-conditions": "/podminky-uziti",
+        "privacy-policy": "/ochrana-osobnich-udaju"
     },
     "menu": {
         "home": "Domů",
         "about": "O mně",
         "projects": "Projekty",
         "contact": "Kontakt"
+    },
+    "header": {
+        "title": "Jana Vlachová",
+        "subtitle": "Fullstack Web Developer",
+        "terms-and-conditions": "Podmínky užití",
+        "privacy-policy": "Ochrana osobních údajů"
     }
 }

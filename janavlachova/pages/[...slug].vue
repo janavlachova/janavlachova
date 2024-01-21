@@ -1,7 +1,5 @@
 <script lang="ts" setup>
 const {
-    t,
-    getLocalePath,
     currentPagePath,
     setDefaultLocaleCode,
     localeExists,
@@ -27,26 +25,9 @@ if (
 </script>
 
 <template>
-    <NuxtLink :to="getLocalePath('/')">{{ t("menu.home") }}</NuxtLink>
-    <NuxtLink :to="getLocalePath(t('url.about'))">
-        {{ t("menu.about") }}
-    </NuxtLink>
-    <NuxtLink :to="getLocalePath(t('url.projects'))">
-        {{ t("menu.projects") }}
-    </NuxtLink>
-    <NuxtLink :to="getLocalePath(t('url.contact'))">
-        {{ t("menu.contact") }}
-    </NuxtLink>
-
-    <main>
-        <img
-            alt="jana vlachova logo"
-            class="logo"
-            src="@/static/logo.svg"
-            width="125"
-            height="125"
-        />
-        jana vlachova
-        <ContentDoc :path="currentPagePath ?? '/'" />
-    </main>
+    <div>
+        <NuxtLayout>
+            <ContentDoc :path="currentPagePath ?? '/'" />
+        </NuxtLayout>
+    </div>
 </template>
