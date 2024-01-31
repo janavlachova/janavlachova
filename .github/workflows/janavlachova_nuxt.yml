@@ -1,11 +1,11 @@
-name: janavlachova
+name: janavlachova_nuxt
 
 on:
   pull_request:
     branches: ["main"]
 
 env:
-  PROJECT: janavlachova
+  PROJECT: janavlachova_nuxt
 
 jobs:
   diff:
