@@ -11,7 +11,7 @@ export default defineConfig({
     test: {
         environment: "jsdom",
         exclude: [...configDefaults.exclude, "e2e/*"],
-        root: path.resolve(__dirname, "./src"),
+        root: path.resolve(__dirname, "."),
         coverage: {
             provider: "v8",
             all: true,
