@@ -1,0 +1,21 @@
+.layout {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: max-content minmax(max-content, 1fr) max-content;
+    grid-template-areas:
+        "header"
+        "container"
+        "footer";
+    min-height: 100dvh;
+    grid-gap: 0;
+    justify-items: center;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 100%;
+}
