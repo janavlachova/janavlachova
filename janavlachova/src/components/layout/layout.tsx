@@ -13,16 +13,14 @@ export default function Layout({
     withNavigation?: boolean;
 }>) {
     return (
-        <html lang="en">
-            <body className={inter.className}>
-                <div className={styles.layout}>
-                    <Header withNavigation={withNavigation} />
-                    <main className={styles.main + " pageContainer"}>
-                        {children}
-                    </main>
-                    <Footer />
-                </div>
-            </body>
-        </html>
+        <body className={inter.className}>
+            <div className={styles.layout}>
+                <Header withNavigation={withNavigation} />
+                <main className={styles.main + " pageContainer"}>
+                    {children}
+                </main>
+                <Footer />
+            </div>
+        </body>
     );
 }
