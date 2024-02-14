@@ -5,7 +5,7 @@ const Header: React.FC = () => {
     return (
         <footer className={styles.footer}>
             <div className="pageContainer lighterText">
-                <span>© 2024 jana vlachova</span>
+                <span>© {new Date().getFullYear()} jana vlachova</span>
                 <a href="https://github.com/janavlachova/janavlachova">
                     This page source code on GitHub
                 </a>

@@ -1,5 +1,3 @@
-import React from "react";
-
 interface Skill {
     key: string;
     name: string;
@@ -98,10 +96,19 @@ const skillsBackend: Skill[] = [
     },
 ];
 
-const Skills: React.FC = () => {
+const Experiences: React.FC = () => {
     return (
         <div>
-            <h1>Skills</h1>
+            <h1>Experiences</h1>
+            <h2>Projects</h2>
+            <ul>
+                <li>Reference 1</li>
+                <li>Reference 2</li>
+                <li>Reference 3</li>
+            </ul>
+
+            <h3>Skills</h3>
+
             <h2>Frontend</h2>
             <ul>
                 {skillsFrontend.map((skill) => (
@@ -124,4 +131,4 @@ const Skills: React.FC = () => {
     );
 };
 
-export default Skills;
+export default Experiences;
