@@ -1,15 +1,24 @@
 import React from "react";
 import Logo from "./logo";
 import styles from "./header.module.css";
+import Navigation from "./navigation";
+import Link from "next/link";
 
-const Header: React.FC = () => {
+type HeaderProps = {
+    withNavigation?: boolean;
+};
+
+const Header: React.FC<HeaderProps> = ({
+    withNavigation = true,
+}: Readonly<HeaderProps>) => {
     return (
         <header className={styles.header}>
             <div className="pageContainer">
-                <div className={styles.headerGroup}>
+                <Link className={styles.headerGroup} href="/">
                     <Logo />
                     <span>jana vlachova</span>
-                </div>
+                </Link>
+                {withNavigation && <Navigation />}
             </div>
         </header>
     );
