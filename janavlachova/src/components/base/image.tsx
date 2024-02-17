@@ -8,10 +8,10 @@ type Props = {
     srcDark?: string;
 };
 
-const Source = (props: { src?: string }) => {
+const Source = (props: { src?: string; media: string }) => {
     if (!props.src) return null;
 
-    return <source srcSet={props.src} />;
+    return <source srcSet={props.src} media={props.media} />;
 };
 
 const Image = (props: Props) => {
@@ -19,8 +19,14 @@ const Image = (props: Props) => {
 
     return (
         <picture>
-            <Source src={props.srcDark}></Source>
-            <Source src={props.srcLight}></Source>
+            <Source
+                src={props.srcDark}
+                media="(prefers-color-scheme: dark)"
+            ></Source>
+            <Source
+                src={props.srcLight}
+                media="(prefers-color-scheme: light)"
+            ></Source>
             <img {...rest} alt={props.alt} />
         </picture>
     );
