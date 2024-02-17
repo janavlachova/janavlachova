@@ -5,5 +5,5 @@ export default function RootLayout({
 }: Readonly<{
     children: React.ReactNode;
 }>) {
-    return <Layout withNavigation={false}>{children}</Layout>;
+    return <Layout withNavigation={true}>{children}</Layout>;
 }

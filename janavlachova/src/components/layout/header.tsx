@@ -3,6 +3,7 @@ import Logo from "./logo";
 import styles from "./header.module.css";
 import Navigation from "./navigation";
 import Link from "next/link";
+import SocialMediaLinks from "./socialMediaLinks";
 
 type HeaderProps = {
     withNavigation?: boolean;
@@ -18,7 +19,10 @@ const Header: React.FC<HeaderProps> = ({
                     <Logo />
                     <span>jana vlachova</span>
                 </Link>
-                {withNavigation && <Navigation />}
+                <div className={styles.headerGroup}>
+                    {withNavigation && <Navigation />}
+                    <SocialMediaLinks />
+                </div>
             </div>
         </header>
     );

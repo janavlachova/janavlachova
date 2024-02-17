@@ -25,8 +25,8 @@ describe("home-layout", () => {
             screen.getByText(`© ${new Date().getFullYear()} jana vlachova`),
         ).toBeTruthy();
     });
-    it("should not render navigation", () => {
-        expect(screen.queryByText("about")).toBeFalsy();
+    it("should render navigation", () => {
+        expect(screen.getByText("about")).toBeTruthy();
     });
     it("should render header", () => {
         expect(screen.getByText("jana vlachova")).toBeTruthy();
